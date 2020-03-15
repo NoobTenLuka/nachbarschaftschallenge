@@ -19,17 +19,22 @@
                     <mat-label class="col-xs-12">Was ich übernehmen kann</mat-label>
                     <mat-form-field class="col-xs-12 offset-bottom-50">
                         <mat-label> Was ich übernehmen kann </mat-label>
-                        <mat-select formControlName="paragraph1" required>
+                        <mat-select formControlName="paragraph1" multiple required>
                             <mat-option>Bitte wählen:</mat-option>
                             <mat-option value="Einkäufe">Einkäufe</mat-option>
                             <mat-option value="Kinderbetreuung">Kinderbetreuung</mat-option>
                         </mat-select>
                     </mat-form-field>
+                    <mat-label class="col-xs-12">Was ich zusätzlich übernehmen kann</mat-label>
+                    <mat-form-field class="col-xs-12 offset-bottom-50">
+                      <mat-label> Was ich zusätzlich übernehmen kann </mat-label>
+                      <textarea class="eingabeFeld" formControlName="paragraph1p" matInput></textarea>
+                    </mat-form-field>
                     <mat-label class="col-xs-12">Sie erreichen mich unter</mat-label>
                     <div class="col-xs-12 offset-bottom-50">
                         <mat-form-field class="col-xs-12">
                             <mat-label>Wo sie mich erreichen können:</mat-label>
-                            <mat-select formControlName="paragraph2" required>
+                            <mat-select formControlName="paragraph2" multiple required>
                                 <mat-option>Bitte wählen:</mat-option>
                                 <mat-option value="Telefon">Telefon</mat-option>
                                 <mat-option value="Email">Email</mat-option>

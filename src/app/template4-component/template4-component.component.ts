@@ -4,6 +4,7 @@ import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { saveAs } from 'file-saver';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-template4-component',
@@ -29,7 +30,9 @@ export class Template4ComponentComponent implements OnInit {
     this.aushangForm = fb.group({
       intro: ['', [Validators.required]],
       paragraph1: ['', [Validators.required]],
+      paragraph1p: ['', [Validators.required]],
       paragraph2: ['', [Validators.required]],
+      paragraph3: ['', [Validators.required]],
       name: ['', [Validators.required]],
     });
   }
@@ -125,7 +128,12 @@ export class Template4ComponentComponent implements OnInit {
    */
   generate() {
     // tslint:disable-next-line: max-line-length
-    this.getPDF("", this.aushangForm.get('paragraph1').value, this.aushangForm.get('paragraph2').value + " " + this.aushangForm.get('paragraph3').value, this.aushangForm.get('name').value);
+    var aufgaben :string = "";
+    this.aushangForm.get('paragraph1').value.forEach(element => {
+        aufgaben += element + " ";
+    });
+    aufgaben += this.aushangForm.get('paragraph1p').value
+    this.getPDF("", aufgaben, this.aushangForm.get('paragraph2').value + " " + this.aushangForm.get('paragraph3').value, this.aushangForm.get('name').value);
   }
 
   async saveAsBlob(response: Blob) {
