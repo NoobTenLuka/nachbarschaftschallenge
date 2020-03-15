@@ -52,6 +52,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Template1ComponentComponent } from './template1-component/template1-component.component';
 import { Template2ComponentComponent } from './template2-component/template2-component.component';
 import { Template3ComponentComponent } from './template3-component/template3-component.component';
+import { Template4ComponentComponent } from './template4-component/template4-component.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { Template3ComponentComponent } from './template3-component/template3-com
     Template1ComponentComponent,
     Template2ComponentComponent,
     Template3ComponentComponent,
+    Template4ComponentComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
